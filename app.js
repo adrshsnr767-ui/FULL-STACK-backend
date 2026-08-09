@@ -7,6 +7,7 @@ const app = express();
 const port = process.env.PORT;
 const cors = require("cors");
 const contactRouter = require("./router/contact-router");
+const serviceRouter = require("./router/service-router");
 
 const corsOptions = {
   origin: "http://localhost:5173",
@@ -19,7 +20,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/auth/", router);
-app.use("/" , contactRouter)
+app.use("/", contactRouter);
+app.use("/", serviceRouter);
 databaseConnection().then(() => {
   app.listen(port, () => {
     console.log(`server statring at ${port}`);
