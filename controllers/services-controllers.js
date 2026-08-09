@@ -18,8 +18,8 @@ const services = async (req, res) => {
 
 const fetchServices = async (req, res) => {
   try {
-    const { title, desc } = req.body;
-    const services = await Services.find({ title, desc });
+ 
+    const services = await Services.find();
     res.status(201).json({
       message: "Services Sucessfully Fetched",
       data: services,
