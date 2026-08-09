@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/auth/", router);
-app.use("/api/contact/" , contactRouter)
+app.use("/" , contactRouter)
 databaseConnection().then(() => {
   app.listen(port, () => {
     console.log(`server statring at ${port}`);
