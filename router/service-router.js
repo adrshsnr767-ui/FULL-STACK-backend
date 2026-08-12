@@ -7,4 +7,6 @@ serviceRouter.route("/services").post(serviceControllers.services);
 
 serviceRouter.route("/get/services").get(serviceControllers.fetchServices);
 
+serviceRouter.route("/add/services").post(serviceControllers.addServices);
+
 module.exports = serviceRouter;
