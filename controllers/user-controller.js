@@ -19,6 +19,12 @@ const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
     const deletedUser = await User.findByIdAndDelete(id);
+    const loggedInUserId = req.user_id;
+    if (id === loggedInUserId.toString()) {
+      return res
+        .status(403)
+        .json({ message: "You cannot delete your own account" });
+    }
 
     if (!deletedUser) {
       return res.status(404).json({ message: "User not found" });
