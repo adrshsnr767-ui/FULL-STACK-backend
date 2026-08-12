@@ -11,7 +11,7 @@ const serviceRouter = require("./router/service-router");
 const userRouter = require("./router/user-router");
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin:["http://localhost:5173", "https://full-stack-frontend-eta-nine.vercel.app/"],
   methods: "GET , POST , PUT , PATCH , DELETE",
   credentials: true,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
